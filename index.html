@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Saman Chopra</title>
+<meta name="description" content="Saman Chopra. AI calls me a pirate the way that I ship. Anything data.">
+<meta property="og:title" content="Saman Chopra">
+<meta property="og:description" content="AI calls me a pirate the way that I ship. Anything data.">
+<meta property="og:image" content="assets/saman.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Figtree:wght@400;500;600&display=swap">
+<style>
+/* Layout: Myscō's system. Ivory ground, one night-indigo hero card, white bordered cards, centered serif section heads. Light only, like Myscō. */
+:root {
+  --ground: #f6f1e7;
+  --ink: #1c1a33;
+  --body: #3e3a55;
+  --muted: #5e5a72;
+  --line: #e3dccd;
+  --stone: #efebe2;
+  --accent: #3f3d9e;
+  --accent-dark: #2b2977;
+  --accent-tint: #e7e6f7;
+  --accent-ink: #33318a;
+  --saffron: #a5561a;
+  --saffron-tint: #f8e6d3;
+  --saffron-ink: #8a4513;
+  --night: #17153a;
+  --night-text: #ede8f7;
+  --night-muted: #c9c3e4;
+  --moon: #f3d9a4;
+  --white: #ffffff;
+  --display: "Fraunces", Georgia, serif;
+  --sans: "Figtree", "Segoe UI", system-ui, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--ground); color: var(--ink); font: 16px/1.6 var(--sans); -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 1152px; margin-inline: auto; padding-inline: 24px; }
+img { max-width: 100%; display: block; }
+a { color: var(--accent); }
+a:hover { color: var(--accent-dark); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+h1, h2, h3 { margin: 0; font-family: var(--display); text-wrap: balance; }
+.ic { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+/* Fraunces misplaces the ō macron, so draw it (same fix as Myscō) */
+.macron { position: relative; display: inline-block; }
+.macron::after { content: ""; position: absolute; left: .1em; right: .1em; top: .34em; height: .08em; border-radius: 99px; background: currentColor; }
+
+/* header */
+header.top { border-bottom: 1px solid var(--line); }
+header.top .wrap { height: 64px; display: flex; align-items: center; gap: 24px; }
+header.top .mark { font: 600 24px var(--display); letter-spacing: -.01em; color: var(--ink); text-decoration: none; margin-right: auto; }
+header.top a.l { color: var(--muted); text-decoration: none; font-size: 15px; }
+header.top a.l:hover { color: var(--ink); }
+header.top a.cta { font-weight: 600; text-decoration: none; font-size: 15px; }
+
+main { padding-block: 32px 0; display: flex; flex-direction: column; gap: 64px; }
+
+/* buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 48px; padding: 0 20px; border-radius: 14px; font: 600 16px var(--sans); text-decoration: none; white-space: nowrap; }
+.btn.solid { background: var(--accent); color: var(--white); }
+.btn.solid:hover { background: var(--accent-dark); color: var(--white); }
+.btn.outline { background: var(--white); color: var(--accent); border: 1.5px solid var(--accent); }
+.btn.light { background: var(--white); color: var(--night); }
+.btn.light:hover { background: var(--moon); color: var(--night); }
+.btn.ghost { border: 1.5px solid #4a4690; color: var(--night-text); }
+.btn.ghost:hover { border-color: var(--moon); color: var(--moon); }
+.btn .ic { width: 18px; height: 18px; }
+.btns { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* hero: night card */
+.hero { border-radius: 28px; background: var(--night); color: var(--night-text); padding: 44px 56px; display: flex; align-items: center; gap: 48px; }
+.hero .text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 16px; max-width: 660px; }
+.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--moon); margin: 0; }
+.hero h1 { font-weight: 400; font-size: clamp(44px, 6vw, 64px); line-height: 1.02; letter-spacing: -.01em; }
+.hero .tagline { margin: 0; font-family: var(--display); font-size: clamp(22px, 2.6vw, 28px); line-height: 1.25; color: var(--night-muted); }
+.hero .tagline em { color: var(--moon); white-space: nowrap; }
+.hero ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 14px; color: var(--night-muted); }
+.hero li { display: flex; align-items: center; gap: 8px; }
+.hero li .ic { width: 18px; height: 18px; color: var(--moon); }
+.hero .btns { padding-top: 8px; }
+.portrait { position: relative; width: 280px; flex-shrink: 0; aspect-ratio: 1; display: grid; place-items: center; }
+.portrait svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.portrait img { position: relative; width: 184px; height: 184px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 6px var(--night), 0 0 0 7.5px var(--moon); }
+
+/* section heads */
+.head { text-align: center; display: flex; flex-direction: column; gap: 6px; margin-bottom: 24px; }
+.head h2 { font-weight: 600; font-size: clamp(26px, 3vw, 32px); line-height: 1.2; }
+.head p { margin: 0; color: var(--muted); }
+
+/* project cards */
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.card { background: var(--white); border: 1px solid var(--line); border-radius: 24px; padding: 24px; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.card .row { display: flex; align-items: center; gap: 10px; }
+.card .row .sp { flex: 1; }
+.tile-ic { width: 44px; height: 44px; border-radius: 16px; display: flex; align-items: center; justify-content: center; }
+.tile-ic .ic { width: 24px; height: 24px; }
+.t-accent { background: var(--accent-tint); color: var(--accent); }
+.t-saffron { background: var(--saffron-tint); color: var(--saffron-ink); }
+.badge { font-size: 13px; font-weight: 600; padding: 6px 12px; border-radius: 99px; white-space: nowrap; }
+.b-accent { background: var(--accent-tint); color: var(--accent-ink); }
+.b-saffron { background: var(--saffron-tint); color: var(--saffron-ink); }
+.b-stone { background: var(--stone); color: var(--muted); }
+.card h3 { font-weight: 600; font-size: 28px; line-height: 1.15; }
+.card p { margin: 0; color: var(--body); }
+.card .pic { border-radius: 16px; overflow: hidden; border: 1px solid var(--line); background: var(--stone); aspect-ratio: 16 / 9; margin-top: 4px; }
+.card .pic img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.card .pic svg { width: 100%; height: 100%; display: block; }
+.card .actions { margin-top: auto; padding-top: 8px; display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; }
+.card .note { font-size: 14px; color: var(--muted); }
+.awards { display: flex; flex-direction: column; gap: 12px; }
+.awards div { display: flex; gap: 12px; padding: 16px; border-radius: 16px; background: var(--stone); }
+.awards .ic { color: var(--saffron); margin-top: 3px; }
+.awards strong { display: block; font: 600 20px/1.3 var(--display); }
+.awards span { color: var(--muted); font-size: 15px; }
+.awards p { margin: 0; }
+
+/* illustration tokens */
+svg text { font-family: var(--sans); }
+svg .t-display { font-family: var(--display); font-weight: 600; }
+.s-ink { fill: var(--ink); } .s-muted { fill: var(--muted); } .s-acc { fill: var(--accent); }
+.s-surf { fill: var(--white); } .s-bg { fill: var(--ground); } .s-soft { fill: var(--stone); }
+.s-warn { fill: var(--saffron); } .s-live { fill: #2f7a4f; }
+.st-line { stroke: var(--line); } .st-acc { stroke: var(--accent); } .st-muted { stroke: var(--muted); } .st-warn { stroke: var(--saffron); }
+
+/* big white panels (experience, resume) */
+.panel { background: var(--white); border: 1px solid var(--line); border-radius: 28px; padding: 48px 56px; display: flex; gap: 64px; scroll-margin-top: 24px; }
+.panel .side { width: 320px; flex-shrink: 0; display: flex; flex-direction: column; gap: 16px; }
+.panel .side h2 { font-weight: 600; font-size: 34px; line-height: 1.15; }
+.panel .side p { margin: 0; color: var(--muted); }
+.panel .main { flex: 1; min-width: 0; }
+.jobs { display: flex; flex-direction: column; }
+.job { display: flex; justify-content: space-between; gap: 8px 24px; flex-wrap: wrap; padding-block: 16px; border-bottom: 1px solid var(--line); }
+.job:first-child { padding-top: 0; }
+.job:last-child { border-bottom: 0; padding-bottom: 0; }
+.job strong { font-weight: 600; }
+.job .org { color: var(--body); }
+.job .when { color: var(--muted); font-size: 15px; font-variant-numeric: tabular-nums; }
+.note-box { display: flex; gap: 12px; padding: 16px; border-radius: 16px; background: var(--stone); color: var(--body); font-size: 14px; line-height: 1.6; }
+.note-box .ic { color: var(--muted); margin-top: 2px; }
+.frame { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: var(--stone); }
+.frame iframe { width: 100%; height: 720px; border: 0; display: block; }
+
+.closing { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 16px; padding-block: 16px; }
+.closing h2 { font-weight: 600; font-size: clamp(30px, 4vw, 40px); }
+.closing p { margin: 0; color: var(--muted); }
+footer { margin-top: 64px; border-top: 1px solid var(--line); padding: 32px 24px; text-align: center; font-size: 13px; color: var(--muted); }
+footer a { color: var(--muted); }
+
+@media (max-width: 900px) {
+  .hero { flex-direction: column-reverse; align-items: flex-start; padding: 32px 24px; gap: 8px; }
+  .portrait { width: 200px; }
+  .portrait img { width: 132px; height: 132px; }
+  .grid { grid-template-columns: minmax(0, 1fr); }
+  .panel { flex-direction: column; gap: 24px; padding: 28px 24px; }
+  .panel .side { width: auto; }
+  .frame iframe { height: 520px; }
+  header.top a.l { display: none; }
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#top">Saman Chopra</a>
+    <a class="l" href="#work">Work</a>
+    <a class="l" href="#experience">Experience</a>
+    <a class="l" href="#resume">Resume</a>
+    <a class="cta" href="https://calendar.app.google/zkdGP6AMRohHEpke6" target="_blank" rel="noopener">Book a call</a>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+  <section class="hero">
+    <div class="text">
+      <p class="eyebrow">Analytics engineer &amp; product builder</p>
+      <h1>Saman Chopra</h1>
+      <p class="tagline">AI calls me a pirate the way that I ship. <em>Anything data.</em></p>
+      <ul>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>4+ years in data</li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg>Buildathon winner 2025</li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>San Francisco</li>
+      </ul>
+      <div class="btns">
+        <a class="btn light" href="https://calendar.app.google/zkdGP6AMRohHEpke6" target="_blank" rel="noopener">Book a call
+          <svg class="ic" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></a>
+        <a class="btn ghost" href="#work">See my work
+          <svg class="ic" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
+      </div>
+    </div>
+    <div class="portrait">
+      <svg aria-hidden="true" viewBox="0 0 280 280" fill="none">
+        <polyline points="18,236 52,206 84,222 120,180" stroke="#8e88c9" stroke-width="1.2" stroke-dasharray="3 5"/>
+        <circle cx="18" cy="236" r="3.5" fill="#ede8f7"/><circle cx="52" cy="206" r="3" fill="#ede8f7"/><circle cx="84" cy="222" r="4.5" fill="#f3d9a4"/>
+        <circle cx="250" cy="34" r="3.5" fill="#f3d9a4"/><circle cx="232" cy="58" r="1.5" fill="#b9b3d6"/>
+        <circle cx="28" cy="40" r="1.4" fill="#b9b3d6"/><circle cx="262" cy="200" r="1.4" fill="#b9b3d6"/><circle cx="210" cy="262" r="1.4" fill="#b9b3d6"/><circle cx="60" cy="110" r="1.4" fill="#b9b3d6"/>
+      </svg>
+      <img src="assets/saman.jpg" alt="Portrait of Saman Chopra" width="184" height="184">
+    </div>
+  </section>
+
+  <section id="work" style="scroll-margin-top: 24px">
+    <div class="head">
+      <h2>What I've built</h2>
+      <p>Products I've shipped, and the data systems behind real businesses.</p>
+    </div>
+    <div class="grid">
+      <article class="card" id="hearmeout">
+        <div class="row">
+          <span class="tile-ic t-accent"><svg class="ic" viewBox="0 0 24 24"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg></span>
+          <span class="sp"></span><span class="badge b-saffron">Buildathon winner</span>
+        </div>
+        <h3>Hear Me Out</h3>
+        <p>A self-serve AI brand and marketing strategist for independent musicians. Announced by will.i.am at Outside Lands.</p>
+        <div class="pic"><img src="assets/hmo-homepage-after-load.png" alt="Hear Me Out start screen asking for a Spotify artist URL" loading="lazy"></div>
+        <div class="actions"><a class="btn solid" href="https://hearmeoutnow.com" target="_blank" rel="noopener">Visit hearmeoutnow.com</a></div>
+      </article>
+
+      <article class="card" id="moriarty">
+        <div class="row">
+          <span class="tile-ic t-saffron"><svg class="ic" viewBox="0 0 24 24"><path d="M3 20h18"/><path d="M5 16l4-5 4 3 6-8"/></svg></span>
+          <span class="sp"></span><span class="badge b-accent">AI agents</span>
+        </div>
+        <h3>Moriarty</h3>
+        <p>AI agents debate a stock, bull versus bear, and return a confidence-rated verdict. Paper trades only.</p>
+        <div class="pic"><svg viewBox="0 0 640 360" role="img" aria-label="Moriarty agent flow: five analyst agents feed a bull and bear debate, a supervisor decides, a risk manager sizes the position">
+            <rect class="s-soft" width="640" height="360"/>
+            <g font-size="12">
+              <g class="s-surf st-line" stroke-width="1">
+                <rect x="20" y="34" width="112" height="34" rx="6"/><rect x="144" y="34" width="112" height="34" rx="6"/>
+                <rect x="268" y="34" width="104" height="34" rx="6"/><rect x="384" y="34" width="112" height="34" rx="6"/>
+                <rect x="508" y="34" width="112" height="34" rx="6"/>
+              </g>
+              <g class="s-ink" text-anchor="middle">
+                <text x="76" y="56">fundamentals</text><text x="200" y="56">sentiment</text><text x="320" y="56">technical</text>
+                <text x="440" y="56">smart money</text><text x="564" y="56">options flow</text>
+              </g>
+              <g class="st-muted" stroke-width="1" fill="none">
+                <path d="M76 68 V100 H564 V68 M200 68 V100 M320 68 V100 M440 68 V100"/>
+                <path d="M320 100 V118"/>
+              </g>
+              <rect x="176" y="118" width="134" height="40" rx="6" class="s-surf st-line"/>
+              <rect x="330" y="118" width="134" height="40" rx="6" class="s-surf st-line"/>
+              <text x="243" y="143" text-anchor="middle" class="s-live">bull case</text>
+              <text x="397" y="143" text-anchor="middle" class="s-warn">bear case</text>
+              <path d="M243 158 V178 H397 V158 M320 178 V196" class="st-muted" fill="none"/>
+              <rect x="210" y="196" width="220" height="44" rx="6" class="s-acc"/>
+              <text x="320" y="223" text-anchor="middle" class="s-bg" font-size="13">supervisor · Claude</text>
+              <path d="M320 240 V258" class="st-muted"/>
+              <rect x="210" y="258" width="220" height="40" rx="6" class="s-surf st-line"/>
+              <text x="320" y="283" text-anchor="middle" class="s-ink">risk manager + kill switch</text>
+              <path d="M320 298 V316" class="st-muted"/>
+              <text x="320" y="336" text-anchor="middle" class="s-ink t-display" font-size="16">advisory verdict · paper trade</text>
+              <text x="20" y="22" class="s-muted" font-size="11">data: yfinance · FRED · SEC Form 4 / 13F / 10-K · news</text>
+            </g>
+          </svg></div>
+        <div class="actions"><a class="btn outline" href="https://moriarty.onrender.com/" target="_blank" rel="noopener">Open Moriarty</a></div>
+      </article>
+
+      <article class="card" id="mysco">
+        <div class="row">
+          <span class="tile-ic t-accent"><svg class="ic" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg></span>
+          <span class="sp"></span><span class="badge b-accent">Free app</span>
+        </div>
+        <h3>Mysc<span class="macron">o</span></h3>
+        <p>A free Vedic birth chart in plain English, with guidance for each phase of life.</p>
+        <div class="pic" style="aspect-ratio: 1200 / 630"><img src="assets/mysco-og.png" alt="Myscō: Your birth chart, in plain English" loading="lazy"></div>
+        <div class="actions"><a class="btn solid" href="https://mysco.vercel.app/" target="_blank" rel="noopener">Visit Myscō</a></div>
+      </article>
+
+      <article class="card" id="valen">
+        <div class="row">
+          <span class="tile-ic t-saffron"><svg class="ic" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></span>
+          <span class="sp"></span><span class="badge b-stone">Prototype</span>
+        </div>
+        <h3>Valen-time</h3>
+        <p>An AI twin of you that goes on simulated dates to test compatibility.</p>
+        <div class="pic"><svg viewBox="0 0 640 360" role="img" aria-label="Valen-time: two digital twins with a match score">
+            <rect class="s-soft" width="640" height="360"/>
+            <g font-size="13">
+              <rect x="40" y="60" width="200" height="240" rx="12" class="s-surf st-line"/>
+              <circle cx="140" cy="122" r="34" class="s-acc"/>
+              <text x="140" y="129" text-anchor="middle" class="s-bg t-display" font-size="22">A</text>
+              <text x="140" y="186" text-anchor="middle" class="s-ink t-display" font-size="18">Twin A</text>
+              <text x="140" y="214" text-anchor="middle" class="s-muted">curious · direct</text>
+              <text x="140" y="238" text-anchor="middle" class="s-muted">hiking · jazz · ramen</text>
+              <text x="140" y="270" text-anchor="middle" class="s-acc">plans the date</text>
+
+              <rect x="400" y="60" width="200" height="240" rx="12" class="s-surf st-line"/>
+              <circle cx="500" cy="122" r="34" class="s-warn"/>
+              <text x="500" y="129" text-anchor="middle" class="s-bg t-display" font-size="22">B</text>
+              <text x="500" y="186" text-anchor="middle" class="s-ink t-display" font-size="18">Twin B</text>
+              <text x="500" y="214" text-anchor="middle" class="s-muted">playful · warm</text>
+              <text x="500" y="238" text-anchor="middle" class="s-muted">jazz · film · ramen</text>
+              <text x="500" y="270" text-anchor="middle" class="s-warn">simulates the date</text>
+
+              <circle cx="320" cy="180" r="52" class="s-surf st-line" stroke-width="1"/>
+              <circle cx="320" cy="180" r="44" fill="none" class="st-line" stroke-width="8"/>
+              <circle cx="320" cy="180" r="44" fill="none" class="st-acc" stroke-width="8" stroke-dasharray="226 276.5" transform="rotate(-90 320 180)" stroke-linecap="round"/>
+              <text x="320" y="186" text-anchor="middle" class="s-ink t-display" font-size="24">82%</text>
+              <text x="320" y="256" text-anchor="middle" class="s-muted" font-size="11">match score</text>
+              <path d="M240 180 H268 M372 180 H400" class="st-muted"/>
+              <text x="320" y="36" text-anchor="middle" class="s-muted" font-size="11">illustration · sample twins</text>
+            </g>
+          </svg></div>
+        <div class="actions"><span class="note">No public demo yet</span></div>
+      </article>
+
+      <article class="card" id="data">
+        <div class="row">
+          <span class="tile-ic t-accent"><svg class="ic" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg></span>
+          <span class="sp"></span><span class="badge b-accent">Data engineering</span>
+        </div>
+        <h3>End-to-end data architecture</h3>
+        <p>Messy numbers in, clean pipelines out, data you can act on.</p>
+        <div class="pic"><svg viewBox="0 0 600 340" role="img" aria-label="Sample restaurant operations dashboard: weekly net sales with a flagged anomaly and a 4-week forecast">
+          <text x="20" y="26" class="s-ink t-display" font-size="16">Restaurant ops · weekly</text>
+          <text x="580" y="26" text-anchor="end" class="s-muted" font-size="11">13 locations</text>
+          <g font-size="11">
+            <rect x="20" y="42" width="180" height="64" rx="6" class="s-bg"/>
+            <rect x="210" y="42" width="180" height="64" rx="6" class="s-bg"/>
+            <rect x="400" y="42" width="180" height="64" rx="6" class="s-bg"/>
+            <text x="32" y="62" class="s-muted">NET SALES (WK 12)</text><text x="32" y="94" class="s-ink t-display" font-size="22">$178K</text><text x="188" y="94" text-anchor="end" class="s-live">+2.3%</text>
+            <text x="222" y="62" class="s-muted">LABOR % OF SALES</text><text x="222" y="94" class="s-ink t-display" font-size="22">27.4%</text><text x="378" y="94" text-anchor="end" class="s-live">−0.8 pt</text>
+            <text x="412" y="62" class="s-muted">AVG CHECK</text><text x="412" y="94" class="s-ink t-display" font-size="22">$38.60</text><text x="568" y="94" text-anchor="end" class="s-warn">−1.1%</text>
+          </g>
+          <g class="st-line" stroke-width="1">
+            <path d="M50 140 H580 M50 182.5 H580 M50 225 H580 M50 267.5 H580 M50 310 H580"/>
+          </g>
+          <g font-size="10" class="s-muted" text-anchor="end">
+            <text x="44" y="143">$200K</text><text x="44" y="186">$180K</text><text x="44" y="228">$160K</text><text x="44" y="271">$140K</text><text x="44" y="313">$120K</text>
+          </g>
+          <path d="M50 250.5 L85.3 242 L120.7 248.4 L156 229.3 L191.3 222.9 L226.7 235.6 L262 218.6 L297.3 203.8 L332.7 280.3 L368 208 L403.3 195.3 L438.7 186.8 L438.7 310 L50 310 Z" class="s-acc" fill-opacity=".12"/>
+          <path d="M50 250.5 L85.3 242 L120.7 248.4 L156 229.3 L191.3 222.9 L226.7 235.6 L262 218.6 L297.3 203.8 L332.7 280.3 L368 208 L403.3 195.3 L438.7 186.8" fill="none" class="st-acc" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M438.7 186.8 L474 180.4 L509.3 174 L544.7 169.8 L580 163.4" fill="none" class="st-acc" stroke-width="2" stroke-dasharray="5 5"/>
+          <circle cx="438.7" cy="186.8" r="4.5" class="s-acc"/>
+          <circle cx="332.7" cy="280.3" r="6" class="s-warn"/>
+          <text x="344" y="296" class="s-warn" font-size="11">wk 9 · −21% · flagged</text>
+          <text x="512" y="155" class="s-muted" font-size="11" text-anchor="middle">forecast</text>
+          <text x="50" y="330" class="s-muted" font-size="10">wk 1</text><text x="438.7" y="330" class="s-muted" font-size="10" text-anchor="middle">wk 12</text><text x="580" y="330" class="s-muted" font-size="10" text-anchor="end">wk 16</text>
+        </svg></div>
+        <div class="actions"><span class="note">Dashboard shows sample data</span></div>
+      </article>
+
+      <article class="card" id="dashboards">
+        <div class="row">
+          <span class="tile-ic t-saffron"><svg class="ic" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>
+          <span class="sp"></span><span class="badge b-saffron">Client work</span>
+        </div>
+        <h3>Dashboards for fitness, F&amp;B, hospitality</h3>
+        <p>Trends, anomalies, and forecasts built for leadership teams.</p>
+        <div class="pic"><svg viewBox="0 0 600 340" role="img" aria-label="Sample fitness studio dashboard: class fill rate by class type and member retention by cohort">
+          <text x="20" y="26" class="s-ink t-display" font-size="16">Studio membership</text>
+          <text x="580" y="26" text-anchor="end" class="s-muted" font-size="11">last 6 months</text>
+          <g font-size="11">
+            <text x="20" y="56" class="s-muted">CLASS FILL RATE</text>
+            <g class="s-muted" text-anchor="end">
+              <text x="88" y="84">Reformer</text><text x="88" y="114">HIIT</text><text x="88" y="144">Yoga</text><text x="88" y="174">Spin</text><text x="88" y="204">Barre</text>
+            </g>
+            <g class="s-bg"><rect x="96" y="71" width="180" height="18" rx="3"/><rect x="96" y="101" width="180" height="18" rx="3"/><rect x="96" y="131" width="180" height="18" rx="3"/><rect x="96" y="161" width="180" height="18" rx="3"/><rect x="96" y="191" width="180" height="18" rx="3"/></g>
+            <g class="s-acc"><rect x="96" y="71" width="165.6" height="18" rx="3"/><rect x="96" y="101" width="145.8" height="18" rx="3"/><rect x="96" y="131" width="133.2" height="18" rx="3"/><rect x="96" y="161" width="118.8" height="18" rx="3"/></g>
+            <rect x="96" y="191" width="104.4" height="18" rx="3" class="s-warn"/>
+            <g class="s-ink" font-size="10"><text x="282" y="84">92%</text><text x="282" y="114">81%</text><text x="282" y="144">74%</text><text x="282" y="174">66%</text><text x="282" y="204">58%</text></g>
+
+            <text x="330" y="56" class="s-muted">RETENTION BY JOIN MONTH</text>
+            <g class="s-muted" font-size="10" text-anchor="middle">
+              <text x="384" y="76">M1</text><text x="422" y="76">M2</text><text x="460" y="76">M3</text><text x="498" y="76">M4</text><text x="536" y="76">M5</text><text x="574" y="76">M6</text>
+            </g>
+            <g class="s-muted" font-size="10" text-anchor="end">
+              <text x="360" y="98">Jan</text><text x="360" y="124">Feb</text><text x="360" y="150">Mar</text><text x="360" y="176">Apr</text><text x="360" y="202">May</text><text x="360" y="228">Jun</text>
+            </g>
+            <g class="s-acc">
+              <rect x="366" y="84" width="36" height="22" rx="2" fill-opacity=".52"/><rect x="404" y="84" width="36" height="22" rx="2" fill-opacity=".38"/><rect x="442" y="84" width="36" height="22" rx="2" fill-opacity=".27"/><rect x="480" y="84" width="36" height="22" rx="2" fill-opacity=".21"/><rect x="518" y="84" width="36" height="22" rx="2" fill-opacity=".17"/><rect x="556" y="84" width="36" height="22" rx="2" fill-opacity=".14"/>
+              <rect x="366" y="110" width="36" height="22" rx="2" fill-opacity=".55"/><rect x="404" y="110" width="36" height="22" rx="2" fill-opacity=".40"/><rect x="442" y="110" width="36" height="22" rx="2" fill-opacity=".30"/><rect x="480" y="110" width="36" height="22" rx="2" fill-opacity=".24"/><rect x="518" y="110" width="36" height="22" rx="2" fill-opacity=".19"/>
+              <rect x="366" y="136" width="36" height="22" rx="2" fill-opacity=".48"/><rect x="404" y="136" width="36" height="22" rx="2" fill-opacity=".35"/><rect x="442" y="136" width="36" height="22" rx="2" fill-opacity=".26"/><rect x="480" y="136" width="36" height="22" rx="2" fill-opacity=".21"/>
+              <rect x="366" y="162" width="36" height="22" rx="2" fill-opacity=".56"/><rect x="404" y="162" width="36" height="22" rx="2" fill-opacity=".43"/><rect x="442" y="162" width="36" height="22" rx="2" fill-opacity=".32"/>
+              <rect x="366" y="188" width="36" height="22" rx="2" fill-opacity=".53"/><rect x="404" y="188" width="36" height="22" rx="2" fill-opacity=".40"/>
+              <rect x="366" y="214" width="36" height="22" rx="2" fill-opacity=".58"/>
+            </g>
+            <g class="s-ink" font-size="10" text-anchor="middle">
+              <text x="384" y="99">88</text><text x="422" y="99">79</text><text x="460" y="99">72</text><text x="498" y="99">68</text><text x="536" y="99">65</text><text x="574" y="99">63</text>
+              <text x="384" y="125">90</text><text x="422" y="125">80</text><text x="460" y="125">74</text><text x="498" y="125">70</text><text x="536" y="125">67</text>
+              <text x="384" y="151">86</text><text x="422" y="151">77</text><text x="460" y="151">71</text><text x="498" y="151">68</text>
+              <text x="384" y="177">91</text><text x="422" y="177">83</text><text x="460" y="177">76</text>
+              <text x="384" y="203">89</text><text x="422" y="203">81</text>
+              <text x="384" y="229">92</text>
+            </g>
+
+            <path d="M20 262 H580" class="st-line"/>
+            <text x="20" y="286" class="s-muted">ACTIVE MEMBERS</text><text x="20" y="316" class="s-ink t-display" font-size="22">2,418</text>
+            <text x="220" y="286" class="s-muted">MONTHLY CHURN</text><text x="220" y="316" class="s-ink t-display" font-size="22">3.1%</text>
+            <text x="420" y="286" class="s-muted">INTRO → MEMBER</text><text x="420" y="316" class="s-ink t-display" font-size="22">34%</text>
+          </g>
+        </svg></div>
+        <div class="actions"><span class="note">Sample data · client names withheld</span></div>
+      </article>
+
+      <article class="card" id="explorers">
+        <div class="row">
+          <span class="tile-ic t-accent"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg></span>
+          <span class="sp"></span><span class="badge b-saffron">Client website</span>
+        </div>
+        <h3>Explorers-Den</h3>
+        <p>Luxury travel site with 30 destinations, fully static and fast.</p>
+        <div class="pic"><img src="assets/explorersden.jpg" alt="Aerial view of limestone islands over turquoise water at sunset" loading="lazy" style="object-position: center"></div>
+        <div class="actions"><a class="btn outline" href="https://www.explorers-den.com/" target="_blank" rel="noopener">Visit explorers-den.com</a></div>
+      </article>
+
+      <article class="card" id="awards">
+        <div class="row">
+          <span class="tile-ic t-saffron"><svg class="ic" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg></span>
+          <span class="sp"></span><span class="badge b-saffron">2025</span>
+        </div>
+        <h3>Awards</h3>
+        <div class="awards">
+          <div><svg class="ic" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg><p><strong>OutsideLLMs Buildathon</strong><span>1st place for Hear Me Out. Featured in Hypebot.</span></p></div>
+          <div><svg class="ic" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg><p><strong>AI Magic Hackathon</strong><span>Best Technical Execution for an inventory forecasting tool.</span></p></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="panel" id="experience">
+    <div class="side">
+      <h2>Experience</h2>
+      <p>Four-plus years building data systems, from Series B startups to multi-client consulting.</p>
+      <div class="note-box"><svg class="ic" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg>Python, SQL, BigQuery, dbt, Power BI, GCP, and REST APIs.</div>
+    </div>
+    <div class="main jobs">
+      <div class="job"><div><strong>Manager, Data &amp; Systems Architecture</strong><div class="org">Service Squared</div></div><span class="when">2025 – 2026</span></div>
+      <div class="job"><div><strong>Co-founder</strong><div class="org">Hear Me Out</div></div><span class="when">2025 – now</span></div>
+      <div class="job"><div><strong>Business Analytics Manager</strong><div class="org">AdvancedPCB</div></div><span class="when">2024</span></div>
+      <div class="job"><div><strong>Assistant Manager, Analytics</strong><div class="org">Payworld Digital Services</div></div><span class="when">2023 – 2024</span></div>
+      <div class="job"><div><strong>Data Analyst</strong><div class="org">Pasys Technologies</div></div><span class="when">2021 – 2023</span></div>
+      <div class="job"><div><strong>BBA, Analytics &amp; Big Data</strong><div class="org">University of Petroleum and Energy Studies</div></div><span class="when">2022</span></div>
+    </div>
+  </section>
+
+  <section class="panel" id="resume">
+    <div class="side">
+      <h2>Resume</h2>
+      <p>The full version, with details on every role.</p>
+      <div class="btns">
+        <a class="btn solid" href="assets/Saman_Chopra_Resume.pdf" download>Download PDF
+          <svg class="ic" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
+        <a class="btn outline" href="assets/Saman_Chopra_Resume.pdf" target="_blank" rel="noopener">Open in new tab</a>
+      </div>
+    </div>
+    <div class="main frame"><iframe src="assets/Saman_Chopra_Resume.pdf#view=FitH" title="Saman Chopra resume (PDF)"></iframe></div>
+  </section>
+
+  <section class="closing">
+    <h2>Let's talk.</h2>
+    <p>Building something with data, or want to ship faster? I'd like to hear about it.</p>
+    <div class="btns" style="justify-content: center">
+      <a class="btn solid" href="https://calendar.app.google/zkdGP6AMRohHEpke6" target="_blank" rel="noopener">Book a call</a>
+      <a class="btn outline" href="mailto:goforsaman@gmail.com">goforsaman@gmail.com</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <a href="https://www.linkedin.com/in/samanchopra20" target="_blank" rel="noopener">LinkedIn</a> ·
+  <a href="mailto:goforsaman@gmail.com">goforsaman@gmail.com</a> ·
+  <a href="https://calendar.app.google/zkdGP6AMRohHEpke6" target="_blank" rel="noopener">Book a call</a> ·
+  San Francisco
+</footer>
+</body>
+</html>
